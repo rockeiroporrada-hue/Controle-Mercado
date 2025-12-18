@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Compras</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<h1>Controle de Compras</h1>
+
+<div class="form">
+    <input type="text" id="item" placeholder="Item">
+    <input type="number" id="valor" placeholder="Valor">
+    <input type="date" id="data">
+    <button onclick="adicionarCompra()">Adicionar</button>
+</div>
+
+<h2>Histórico</h2>
+<ul id="lista"></ul>
+
+<div class="info">
+    <p><strong>Média mensal:</strong> R$ <span id="media">0.00</span></p>
+    <button class="danger" onclick="limparHistorico()">Apagar Histórico</button>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
+</body>
+</html>
